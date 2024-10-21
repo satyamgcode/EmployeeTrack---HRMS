@@ -10,6 +10,7 @@ import user from '../assets/icons/user.svg';
 import chat from '../assets/icons/chat.svg';
 import shop from '../assets/icons/shop.svg';
 import mailbox from '../assets/icons/mailbox.svg';
+import Holiday from '../assets/icons/holiday-calendar.svg'
 
 // Sidebar items
 const sideBarList = [
@@ -20,12 +21,12 @@ const sideBarList = [
   },
   {
     text: 'Performance',
-    route: '/',
+    route: '/performance',
     icon: performance,
   },
   {
     text: 'User',
-    route: '/',
+    route: '/users',
     icon: user,
   },
   {
@@ -34,14 +35,14 @@ const sideBarList = [
     icon: chat,
   },
   {
-    text: 'Shop',
-    route: '/',
+    text: ' Policy Documents',
+    route: '/companypolicy',
     icon: shop,
   },
   {
-    text: 'Mailbox',
-    route: '/',
-    icon: mailbox,
+    text: 'Holidays',
+    route: '/holidays',
+    icon: Holiday ,
   }
 ];
 
@@ -67,7 +68,7 @@ watch(route, () => {
 <template>
   <div class="flex h-screen">
     <!-- Sidebar -->
-    <div class="flex flex-col justify-between bg-white px-4 py-6 w-60 h-full">
+    <div class="flex flex-col justify-between bg-white px-4 py-6 w-60 h-full min-w-60">
       <!-- Logo -->
       <div class="flex items-center mb-6">
         <img :src="logo" alt="EmployeeTrack Logo" class="h-8 mr-2" />
@@ -77,11 +78,11 @@ watch(route, () => {
       <!-- Sidebar Menu -->
       <div class="flex-grow">
         <div v-for="link in sideBarList" :key="link.text" 
-             :class="{'bg-indigo-100 text-blue-600': activeTab === link.route, 'text-gray-700': activeTab !== link.route}"
-             class="flex items-center m-1 p-1 px-3 rounded-lg hover:bg-indigo-100 hover:text-blue-500 transition duration-300 cursor-pointer"
+             :class="{'bg-purple-100 text-purple-600': activeTab === link.route, 'text-gray-700': activeTab !== link.route}"
+             class="flex items-center m-1 p-1 px-3 rounded-lg hover:bg-purple-100 hover:text-purple-500 transition duration-300 cursor-pointer"
              @click="setActive(link)">
           <img :src="link.icon" class="mr-3" />
-          <span class="w-full text-xs font-medium">{{ link.text }}</span>
+          <span class="w-full text-sm font-medium py-0.5">{{ link.text }}</span>
         </div>
       </div>
 
@@ -90,7 +91,7 @@ watch(route, () => {
         <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile" class="w-10 h-10 rounded-full mr-3" />
         <div>
           <div class="text-gray-700 font-semibold">Satyam</div>
-          <a href="#" class="text-blue-500 text-sm">View profile</a>
+          <a href="#" class="text-purple-600 text-sm">View profile</a>
         </div>
         <span class="mdi mdi-cog-outline text-2xl text-gray-500 ml-auto"></span>
       </div>

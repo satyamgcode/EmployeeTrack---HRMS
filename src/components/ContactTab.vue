@@ -29,7 +29,7 @@ const saveChanges = () => {
 
 <template>
   <EmployeePage>
-    <div class="max-w-full mx-auto mt-8 bg-white p-8 rounded-lg ">
+    <div class="max-w-full mx-auto mt-8 bg-white p-8 rounded-lg shadow-md ">
       <div class="flex justify-between items-center mb-6">
         <h2 class="text-2xl font-semibold">Contact Details</h2>
         <button @click="toggleEdit" class="text-gray-500 hover:text-gray-700">
@@ -44,9 +44,9 @@ const saveChanges = () => {
             v-if="isEditing"
             v-model="contactData.email"
             type="email"
-            class="w-full border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="w-full border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
-          <p v-else><a :href="`mailto:${contactData.email}`" class="text-blue-600">{{ contactData.email }}</a></p>
+          <p v-else><a :href="`mailto:${contactData.email}`" class="text-purple-600">{{ contactData.email }}</a></p>
         </div>
 
         <div>
@@ -55,10 +55,10 @@ const saveChanges = () => {
             v-if="isEditing"
             v-model="contactData.phone"
             type="tel"
-            class="w-full border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="w-full border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
             required
           />
-          <p v-else><a :href="`tel:${contactData.phone}`" class="text-blue-600">{{ contactData.phone }}</a></p>
+          <p v-else><a :href="`tel:${contactData.phone}`" class="text-purple-600">{{ contactData.phone }}</a></p>
         </div>
 
         <div class="col-span-2">
@@ -67,7 +67,7 @@ const saveChanges = () => {
             v-if="isEditing"
             v-model="contactData.currentAddress"
             type="text"
-            class="w-full border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="w-full border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
           <p v-else>{{ contactData.currentAddress }}</p>
         </div>
@@ -78,7 +78,7 @@ const saveChanges = () => {
             v-if="isEditing"
             v-model="contactData.permanentAddress"
             type="text"
-            class="w-full border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="w-full border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
           <p v-else>{{ contactData.permanentAddress }}</p>
         </div>
@@ -89,7 +89,7 @@ const saveChanges = () => {
             v-if="isEditing"
             v-model="contactData.officeAddress"
             type="text"
-            class="w-full border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="w-full border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
           <p v-else>{{ contactData.officeAddress }}</p>
         </div>
@@ -112,7 +112,3 @@ const saveChanges = () => {
     </div>
   </EmployeePage>
 </template>
-
-<style scoped>
-/* Optional custom styles for better alignment and aesthetics */
-</style>

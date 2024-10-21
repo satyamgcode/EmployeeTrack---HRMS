@@ -23,7 +23,7 @@
                     <!-- Submit Button -->
                     <div class="flex items-center justify-between">
                         <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                             Login
                         </button>
                         <p class="text-red-500"><router-link>forgot password</router-link></p>
@@ -31,7 +31,7 @@
 
                     <div class="flex items-center justify-between">
                         <p class="text-gray-700 text-sm mt-4">Don't have an account? </p>
-                        <router-link to="/register" class="text-blue-600">Register</router-link>
+                        <router-link to="/register" class="text-purple-600">Register</router-link>
                     </div>
                 </form>
             </div>

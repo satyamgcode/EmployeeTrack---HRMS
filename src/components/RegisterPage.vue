@@ -119,7 +119,7 @@ const registerEmployee = () => {
                 <div class="flex justify-between">
                     <button 
                 type="submit" 
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
                 Register
               </button>
@@ -128,7 +128,7 @@ const registerEmployee = () => {
               <br>
               <div class="flex justify-between">
                 <p>Already have an account? </p>
-              <router-link to="/login" class="text-blue-800">Login</router-link>
+              <router-link to="/login" class="text-purple-800">Login</router-link>
               </div>
             </div>
           </form>

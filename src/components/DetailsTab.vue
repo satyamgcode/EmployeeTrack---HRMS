@@ -39,12 +39,12 @@ const updateDetails = () => {
 
 <template>
   <EmployeePage>
-    <div class="mt-6 bg-white p-6 rounded-lg">
+    <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
       <div class="flex justify-between items-center mb-4">
         <h2 class="text-2xl font-semibold">Employee Details</h2>
         <button
           @click="toggleEditMode"
-          class="bg-blue-600 text-white py-1 px-4 rounded hover:bg-blue-700"
+          class="bg-purple-600 text-white py-1 px-4 rounded hover:bg-purple-700"
         >
           {{ isEditing ? 'Cancel' : 'Edit' }}
         </button>
@@ -66,9 +66,9 @@ const updateDetails = () => {
           <p><strong>Joining Date:</strong> {{ employeeData.joiningDate }}</p>
         </div>
         <div>
-          <p><strong>Email:</strong> <a href="mailto:{{ employeeData.email }}" class="text-blue-600">{{ employeeData.email }}</a></p>
-          <p><strong>Phone:</strong> <a href="tel:{{ employeeData.phone }}" class="text-blue-600">{{ employeeData.phone }}</a></p>
-          <p><strong>Website:</strong> <a :href="employeeData.website" class="text-blue-600">{{ employeeData.website }}</a></p>
+          <p><strong>Email:</strong> <a href="mailto:{{ employeeData.email }}" class="text-purple-600">{{ employeeData.email }}</a></p>
+          <p><strong>Phone:</strong> <a href="tel:{{ employeeData.phone }}" class="text-purple-600">{{ employeeData.phone }}</a></p>
+          <p><strong>Website:</strong> <a :href="employeeData.website" class="text-purple-600">{{ employeeData.website }}</a></p>
         </div>
         <div class="col-span-2">
           <p>{{ employeeData.bio }}</p>

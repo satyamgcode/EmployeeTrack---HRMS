@@ -45,7 +45,7 @@
 
         <!-- Message sent by the current user -->
         <div v-else class="flex justify-end">
-          <div class="max-w-xs text-sm font-normal bg-blue-500 text-white p-1 px-2 rounded-lg">
+          <div class="max-w-xs text-sm font-normal bg-purple-500 text-white p-1 px-2 rounded-lg">
             {{ message.text }}
           </div>
         </div>

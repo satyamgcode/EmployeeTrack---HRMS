@@ -69,6 +69,13 @@ const triggerUpdateFileUpload = (doc) => {
   document.querySelector('#update-file-input').click();
 };
 
+const deleteDocument = (doc) => {
+  const index = uploadedDocuments.value.indexOf(doc);
+  if (index !== -1) {
+    uploadedDocuments.value.splice(index, 1);
+  }
+};
+
 const handleUpdateFile = (event) => {
   const file = event.target.files[0];
   if (file && documentToUpdate.value) {
@@ -86,12 +93,12 @@ const handleUpdateFile = (event) => {
       <div class="flex gap-8">
         <!-- Upload New Documents Section -->
         <div class="w-full lg:w-2/3 bg-white p-6 rounded-lg shadow-md">
-          <h2 class="text-xl font-semibold mb-4">Upload <span class="text-blue-500">New Documents</span></h2>
+          <h2 class="text-xl font-semibold mb-4">Upload <span class="text-purple-500">New Documents</span></h2>
 
           <div class="mb-4">
             <label class="block text-gray-700 font-semibold mb-2">Document Type</label>
             <select v-model="selectedDocumentType"
-                    class="border border-gray-300 rounded-md w-full p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    class="border border-gray-300 rounded-md w-full p-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
               <option disabled value="">--- Select Doc Type ---</option>
               <option v-for="doc in documentTypes" :key="doc" :value="doc">{{ doc }}</option>
             </select>
@@ -99,7 +106,7 @@ const handleUpdateFile = (event) => {
 
           <div class="mb-6">
             <label class="block text-gray-700 font-semibold mb-2">Upload Document</label>
-            <div class="border-2 border-dashed border-gray-300 rounded-md p-8 text-center cursor-pointer hover:border-blue-500"
+            <div class="border-2 border-dashed border-gray-300 rounded-md p-8 text-center cursor-pointer hover:border-purple-500"
                  @dragover.prevent @drop.prevent="handleFileDrop" @click="triggerFileUpload">
               <input type="file" ref="fileInput" @change="handleFileUpload" class="hidden" />
               <p>Drop a document here or click to select file to upload</p>
@@ -115,12 +122,12 @@ const handleUpdateFile = (event) => {
           </div>
 
           <button @click="saveDocument"
-                  class="mt-4 bg-blue-500 text-white py-2 px-6 rounded-md hover:bg-blue-600">Upload Document</button>
+                  class="mt-4 bg-purple-500 text-white py-2 px-6 rounded-md hover:bg-purple-600">Upload Document</button>
         </div>
 
         <!-- Required Documents List Section -->
         <div class="w-full lg:w-1/3 bg-white p-6 rounded-lg shadow-md">
-          <h2 class="text-xl font-semibold mb-4">Required <span class="text-blue-500">Documents</span></h2>
+          <h2 class="text-xl font-semibold mb-4">Required <span class="text-purple-500">Documents</span></h2>
           <ul class="list-inside list-decimal text-gray-700">
             <li v-for="doc in requiredDocuments" :key="doc" class="flex items-center gap-2 mb-2">
               <i class="mdi mdi-check-circle text-green-500"></i>
@@ -132,7 +139,7 @@ const handleUpdateFile = (event) => {
 
       <!-- Document Directory Section -->
       <div class="w-full bg-white p-6 rounded-lg shadow-md mt-8">
-        <h2 class="text-xl font-semibold mb-4">Document <span class="text-blue-500">Directory</span></h2>
+        <h2 class="text-xl font-semibold mb-4">Document <span class="text-purple-600">Directory</span></h2>
         <div v-if="uploadedDocuments.length > 0">
           <table class="w-full text-left border-collapse">
             <thead>
@@ -150,9 +157,12 @@ const handleUpdateFile = (event) => {
                 </td>
                 <td class="py-2">{{ doc.type }}</td>
                 <td class="py-2">{{ doc.lastModified }}</td>
-                <td class="py-2">
-                  <button @click="previewDocument(doc)" class="text-blue-500 hover:text-blue-700">Preview</button> |
-                  <button @click="triggerUpdateFileUpload(doc)" class="text-blue-500 hover:text-blue-700">Update</button>
+                <td class="py-2 flex items-center gap-2 justify-between sm:mr-3 ">
+                  <div>
+                    <button @click="previewDocument(doc)" class="text-purple-500 hover:text-purple-700">Preview</button> |
+                  <button @click="triggerUpdateFileUpload(doc)" class="text-purple-500 hover:text-purple-700">Update</button>
+                  </div>
+                  <span @click="deleteDocument(doc)" class="mdi mdi-delete text-red-500 hover:text-red-700 cursor-pointer ml-2 text-2xl"></span>
                 </td>
               </tr>
             </tbody>

@@ -11,13 +11,13 @@
             v-for="link in navLinks" 
             :key="link.text" 
             :to="link.route" 
-            class="text-gray-700 hover:text-blue-500 transition duration-300"
-            active-class="text-blue-500">
+            class="text-gray-700 hover:text-purple-500 transition duration-300"
+            active-class="text-purple-500">
             {{ link.text }}
           </router-link>
         </nav>
   
-        <button @click="handleClick() && emit('clickHeaderButton')"   class=" bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">
+        <button @click="handleClick() && emit('clickHeaderButton')"   class=" bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 transition duration-300">
           {{ buttonName }}
         </button>
       </div>

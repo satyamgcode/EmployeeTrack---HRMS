@@ -13,7 +13,7 @@
           {{ subtitle }}
         </p>
   
-        <button v-if="button" class="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow">
+        <button v-if="button" class="mt-6 px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg shadow">
           Download
         </button>
       </div>

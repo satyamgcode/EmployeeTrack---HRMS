@@ -24,7 +24,7 @@
               </svg>
             </span>
           </div>
-          <button class="ml-4 py-2 px-6 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+          <button class="ml-4 py-2 px-6 bg-purple-600 text-white rounded-md hover:bg-purple-800">
             Subscribe
           </button>
         </div>

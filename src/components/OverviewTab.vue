@@ -53,10 +53,10 @@ const employeeData = {
                 </div>
 
                 <div class="mt-6">
-                    <p>Email: <a href="mailto:{{ employeeData.email }}" class="text-blue-600">{{ employeeData.email
+                    <p>Email: <a href="mailto:{{ employeeData.email }}" class="text-purple-600">{{ employeeData.email
                             }}</a></p>
-                    <p>Website: <a :href="employeeData.website" class="text-blue-600">{{ employeeData.website }}</a></p>
-                    <p>Phone: <a href="tel:{{ employeeData.phone }}" class="text-blue-600">{{ employeeData.phone }}</a>
+                    <p>Website: <a :href="employeeData.website" class="text-purple-600">{{ employeeData.website }}</a></p>
+                    <p>Phone: <a href="tel:{{ employeeData.phone }}" class="text-purple-600">{{ employeeData.phone }}</a>
                     </p>
                 </div>
 

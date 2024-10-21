@@ -25,8 +25,8 @@
             and accurate salary disbursements while complying with regulations.
           </p>
           <div class="mt-4 flex justify-center md:justify-start gap-3 items-center">
-            <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg ">Try now</button>
-            <a href="#" class="text-indigo-600 ">Learn more</a>
+            <button class="px-4 py-2 bg-purple-600 text-white rounded-lg ">Try now</button>
+            <a href="#" class="text-purple-600 ">Learn more</a>
           </div>
         </div>
         <img :src="meetingImg" alt="Smart Payroll" class="h-60 w-80 rounded-xl object-cover" />
@@ -41,8 +41,8 @@
             applications, and performance reviews, reducing administrative workload.
           </p>
           <div class="mt-4 flex justify-center md:justify-start gap-3 align-center">
-            <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg">Try now</button>
-            <a href="#" class="text-indigo-600 ">Learn more</a>
+            <button class="px-4 py-2 bg-purple-600 text-white rounded-lg">Try now</button>
+            <a href="#" class="text-purple-600 ">Learn more</a>
           </div>
         </div>
       </div>
@@ -50,12 +50,12 @@
   </div>
 
   <div class="bg-neutral-100 flex flex-col gap-4 text-center items-center py-8 text-gray-700">
-    <p class="text-blue-500 text-5xl">Join 20,000+ Users!</p>
+    <p class="text-purple-500 text-5xl">Join 20,000+ Users!</p>
     <p class="text-lg">
       Be part of our thriving community and enhance your career development. Sign up now to get started! 
     </p>
-    <button class="mt-6 px-6 w-max py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow">
-          <router-link to="/register">Register</router-link>
+    <button class="mt-6 px-6 w-max py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-lg shadow">
+          <router-link to="/CreateAccount">Register</router-link>
         </button>
   </div>
 
