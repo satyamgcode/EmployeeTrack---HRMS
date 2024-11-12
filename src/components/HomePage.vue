@@ -1,9 +1,9 @@
 <template>
   <div class="fixed top-0 left-0 right-0 z-50">
-    <Navbar />
+    <Navbar :buttonName="'Sign in'" />
   </div>
   <HeroSection 
-    title="Simplify Your Projects with WebApp"
+    title="All-in-one workspace for empowered teams"
     subtitle="Streamline your workflow with intuitive tools and real-time collaboration." 
   />
 
@@ -59,6 +59,9 @@
         </button>
   </div>
 
+
+  <AppShots />
+
   <AppFooter class="bg-neutral-50" />
 </template>
 
@@ -67,6 +70,7 @@
 import Navbar from './headers/HomeHeader.vue';
 import HeroSection from './HeroSection.vue';
 import AppFooter from './Footer/AppFooter.vue';
+import AppShots from './AppShots.vue';
 
 import meetingImg from '../assets/images/meeting.jpg';
 import conductorImg from '../assets/images/conduct.jpg';

@@ -46,20 +46,16 @@ const sideBarList = [
   }
 ];
 
-// Router setup
 const router = useRouter();
 const route = useRoute();
 
-// Reactive state for active tab
 const activeTab = ref(route.path);
 
-// Function to set active tab
 const setActive = (link) => {
   activeTab.value = link.route;
   router.push(link.route);
 };
 
-// Watch the route and update the active tab accordingly
 watch(route, () => {
   activeTab.value = route.path;
 });

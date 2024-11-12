@@ -11,8 +11,8 @@
             v-for="link in navLinks" 
             :key="link.text" 
             :to="link.route" 
-            class="text-gray-700 hover:text-purple-500 transition duration-300"
-            active-class="text-purple-500">
+            class="text-gray-700 hover:text-purple-500 transition duration-300 font-semibold"
+            active-class="text-purple-500 ">
             {{ link.text }}
           </router-link>
         </nav>
@@ -50,7 +50,7 @@
  const emit = defineEmits(['clickHeaderButton']);
 
  const handleClick = () => {
-    router.push('/register');
+    router.push('/login');
   };
 
   </script>
