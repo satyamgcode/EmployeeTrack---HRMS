@@ -2,22 +2,21 @@
   <div class="fixed top-0 left-0 right-0 z-50">
     <Navbar :buttonName="'Sign in'" />
   </div>
-  <HeroSection 
+<HeroSection 
     title="All-in-one workspace for empowered teams"
     subtitle="Streamline your workflow with intuitive tools and real-time collaboration." 
   />
 
-  <div class="flex flex-col items-center pt-8 pb-8 gap-7 text-gray-700">
-    <!-- Title and description -->
+    <div class="flex flex-col items-center pt-8 pb-8 gap-7 text-gray-700">
+
     <h2 class="text-5xl font-semibold text-center">Key Features</h2>
     <p class="text-lg text-center max-w-3xl">
       Explore the powerful features of EmployeePro designed to streamline your HR
       processes with ease and efficiency.
     </p>
 
-    <!-- Features section -->
     <div class="flex flex-col gap-8 px-4 max-w-[56rem]">
-      <div class="flex items-center md:flex-row gap-5 bg-white rounded-lg  p-6">
+      <div class="flex flex-col md:flex-row items-center gap-5 bg-white rounded-lg  p-6">
         <div class="flex flex-col justify-center text-center md:text-left">
           <h3 class="text-2xl font-bold text-gray-900">Smart Payroll</h3>
           <p class="text-lg text-gray-600 mt-2">
@@ -32,7 +31,7 @@
         <img :src="meetingImg" alt="Smart Payroll" class="h-60 w-80 rounded-xl object-cover" />
       </div>
 
-      <div class="flex items-center md:flex-row gap-5 bg-white rounded-lg  p-6">
+      <div class="flex items-center flex-col-reverse md:flex-row gap-5 bg-white rounded-lg  p-6">
         <img :src="conductorImg" alt="Employee Self-Service" class="h-60 w-80 rounded-xl object-cover" />
         <div class="flex flex-col justify-center text-center md:text-left">
           <h3 class="text-2xl font-bold text-gray-900">Employee Self-Service</h3>

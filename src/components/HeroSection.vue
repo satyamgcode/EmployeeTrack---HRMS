@@ -6,9 +6,9 @@
       alt="Hero Background"
     />
     
-    <div class="text-5xl text-center font-bold absolute top-28 rounded-xl z-10 text-white shadow-xl w-full p-12 fade-in delay-200">
-      <span class="text-9xl">Empowering <span class=" text-9xl text-left bg-purple-800 px-4 pb-4 rounded-lg">teams</span></span>, <br> <span class=" text-3xl text-right">transforming workplaces</span>.
-      <div class="flex pt-16 text-lg font-semibold gap-6 justify-center items-center">
+    <div class="text-5xl text-center font-bold absolute top-14 sm:top-28 rounded-xl z-10 text-white shadow-xl w-full p-12 fade-in delay-200">
+      <span class="text-4xl md:text-6xl lg:text-8xl">Empowering <span class="text-3xl md:text-6xl lg:text-8xl text-left bg-purple-800 px-4 pb-4 rounded-lg">teams</span></span>, <br> <span class="text-lg md:text-2xl lg:text-3xl lg:mr-20 text-right">transforming workplaces .</span>
+      <div class="flex flex-col sm:flex-row pt-10 lg:pt-16 text-lg font-semibold gap-6 justify-center items-center">
         <button class="transform hover:scale-105 transition-transform duration-300 flex">
           <span class="text-white  bg-purple-600 px-4 py-2 rounded-lg hover:bg-purple-700 shadow-lg">  <router-link to="/CreateAccount" class="flex gap-3">Get started <img :src="rightIcon" alt="rightIcon"> </router-link> </span>
           
@@ -19,7 +19,7 @@
       </div>  
     </div>
 
-    <div class="relative z-10 mt-96 text-center text-gray-950 shadow-2xl bg-purple-200 rounded-2xl p-4 px-16  fade-in delay-400">
+    <div class="relative z-10 mt-60 mx-2 md:mx-0 md:mt-96 text-center text-gray-950 shadow-2xl bg-purple-200 rounded-2xl p-4 px-16  fade-in delay-400">
       <h1 v-if="title" class="text-sm md:text-2xl font-semibold mb-4">
         {{ title }}
       </h1>
@@ -37,7 +37,6 @@
   
   <script setup>
   import { defineProps } from 'vue';
-  // import HeroImage from '../assets/images/main-hero.png';
   import HeroImage from '../assets/images/office.jpg';
   import rightIcon from '../assets/icons/right-icon.svg';
   
