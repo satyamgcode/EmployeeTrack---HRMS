@@ -1,84 +1,111 @@
 <template>
-  <div class="relative w-full h-screen bg-cover bg-center flex items-center justify-center">
-    <img 
-      :src="HeroImage" 
-      class="absolute inset-0 w-full h-full object-cover overlay bg-opacity-50 transition-opacity duration-1000 ease-in-out fade-in"
-      alt="Hero Background"
-    />
-    
-    <div class="text-5xl text-center font-bold absolute top-14 sm:top-28 rounded-xl z-10 text-white shadow-xl w-full p-12 fade-in delay-200">
-      <span class="text-4xl md:text-6xl lg:text-8xl">Empowering <span class="text-3xl md:text-6xl lg:text-8xl text-left bg-purple-800 px-4 pb-4 rounded-lg">teams</span></span>, <br> <span class="text-lg md:text-2xl lg:text-3xl lg:mr-20 text-right">transforming workplaces .</span>
-      <div class="flex flex-col sm:flex-row pt-10 lg:pt-16 text-lg font-semibold gap-6 justify-center items-center">
-        <button class="transform hover:scale-105 transition-transform duration-300 flex">
-          <span class="text-white  bg-purple-600 px-4 py-2 rounded-lg hover:bg-purple-700 shadow-lg">  <router-link to="/CreateAccount" class="flex gap-3">Get started <img :src="rightIcon" alt="rightIcon"> </router-link> </span>
+  <section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gray-900">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        :src="HeroImage" 
+        class="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
+        alt="Hero Background"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-transparent to-gray-900"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container mx-auto px-6 relative z-10 pt-20">
+      <div class="flex flex-col items-center text-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full mb-8 animate-fade-in-up">
+          <span class="flex h-2 w-2 rounded-full bg-brand-orange animate-pulse"></span>
+          <span class="text-white text-xs font-bold uppercase tracking-widest">New: Payroll Automation 2.0</span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl lg:text-8xl font-black text-white leading-tight mb-6 animate-fade-in-up delay-100">
+          Empowering <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-purple to-brand-orange">Teams</span><br />
+          <span class="text-3xl md:text-5xl lg:text-6xl font-light opacity-90">Transforming Workplaces.</span>
+        </h1>
+
+        <p class="max-w-2xl text-lg md:text-xl text-gray-300 mb-10 animate-fade-in-up delay-200">
+          {{ subtitle || "The all-in-one HRMS solution designed for the modern workforce. Streamline operations, engage employees, and grow your business." }}
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up delay-300">
+          <router-link 
+            to="/CreateAccount" 
+            class="group bg-brand-purple text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-purple/90 transition-all flex items-center gap-3 shadow-2xl shadow-brand-purple/30 hover:-translate-y-1"
+          >
+            Get Started Free
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </router-link>
           
-        </button>
-        <button class="transform hover:scale-105 transition-transform duration-300">
-          <span class="text-white border border-white px-4 py-2 rounded-lg  shadow-lg">Learn more</span>
-        </button>
-      </div>  
+          <button class="px-8 py-4 rounded-full font-bold text-lg text-white border border-white/20 hover:bg-white/10 transition-all backdrop-blur-sm">
+            Watch Demo
+          </button>
+        </div>
+
+        <!-- Floating Stats (Mobile Hidden or Simplified) -->
+        <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 animate-fade-in-up delay-400">
+          <div class="text-center">
+            <p class="text-3xl md:text-4xl font-black text-brand-orange">10k+</p>
+            <p class="text-sm text-gray-400 uppercase tracking-widest font-bold mt-1">Users</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl md:text-4xl font-black text-white">99%</p>
+            <p class="text-sm text-gray-400 uppercase tracking-widest font-bold mt-1">Satisfaction</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl md:text-4xl font-black text-brand-purple">24/7</p>
+            <p class="text-sm text-gray-400 uppercase tracking-widest font-bold mt-1">Support</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl md:text-4xl font-black text-white">50+</p>
+            <p class="text-sm text-gray-400 uppercase tracking-widest font-bold mt-1">Countries</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="relative z-10 mt-60 mx-2 md:mx-0 md:mt-96 text-center text-gray-950 shadow-2xl bg-purple-200 rounded-2xl p-4 px-16  fade-in delay-400">
-      <h1 v-if="title" class="text-sm md:text-2xl font-semibold mb-4">
-        {{ title }}
-      </h1>
-      <p v-if="subtitle" class="text-md text-purple-800 md:text-lg">
-        {{ subtitle }}
-      </p>
-
-      <button v-if="button" class="mt-6 px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg shadow transform hover:scale-105 transition-transform duration-300">
-        Download
-      </button>
-    </div>
-  </div>
+    <!-- Decorative Elements -->
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-purple/20 rounded-full blur-3xl"></div>
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-orange/20 rounded-full blur-3xl"></div>
+  </section>
 </template>
 
-  
-  <script setup>
-  import { defineProps } from 'vue';
-  import HeroImage from '../assets/images/office.jpg';
-  import rightIcon from '../assets/icons/right-icon.svg';
-  
-  const props = defineProps({
-    title: {
-      type: String,
-      default: false,
-    },
-    subtitle: {
-      type: String,
-      default: false,
-    },
-    button: {
-      type: Boolean,
-      default: false,
-    }
-  });
-  
-  </script>
+<script setup>
+import { defineProps } from 'vue';
+import HeroImage from '../assets/images/office.jpg';
+
+const props = defineProps({
+  title: String,
+  subtitle: String,
+  button: Boolean,
+});
+</script>
 
 <style scoped>
-.fade-in {
+@keyframes slow-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
   opacity: 0;
-  animation: fadeIn ease 1s forwards;
-}
-.fade-in.delay-200 {
-  animation-delay: 0.2s;
-}
-.fade-in.delay-400 {
-  animation-delay: 0.4s;
+  animation: fade-in-up 0.8s forwards cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-button span {
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-button span:hover {
-  transform: translateY(-2px);
-}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
 </style>
   

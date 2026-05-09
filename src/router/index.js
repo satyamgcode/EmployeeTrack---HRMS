@@ -1,12 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Homepage from '../components/HomePage.vue';
 import MainLayout from '../components/MainLayout.vue';
+import AboutPage from '../components/AboutPage.vue';
+import ContactPage from '../components/ContactPage.vue';
+import FeaturesPage from '../components/FeaturesPage.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Homepage',
     component: Homepage,
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: AboutPage,
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: ContactPage,
+  },
+  {
+    path: '/features',
+    name: 'Features',
+    component: FeaturesPage,
   },
   // for company HRMS setup steps
   {

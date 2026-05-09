@@ -31,7 +31,7 @@ const registerEmployee = () => {
     <div>
       <!-- Navbar at the top -->
       <div class="fixed top-0 left-0 right-0 z-50">
-        <Navbar :showNavItems="false" :buttonName="'Become a Member'" />
+        <Navbar :showNavItems="false" :buttonName="'Become a Member'" theme="light" />
       </div>
   
       <!-- Main content starts here -->

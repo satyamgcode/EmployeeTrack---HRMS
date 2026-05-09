@@ -5,7 +5,20 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brand: {
+          orange: '#F3901B',
+          purple: '#8A3EEA',
+        }
+      },
+      fontFamily: {
+        outfit: ['Outfit', 'sans-serif'],
+      },
+      animation: {
+        'bounce-slow': 'bounce 3s linear infinite',
+      }
+    },
   },
   plugins: [],
 }
