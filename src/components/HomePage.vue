@@ -114,7 +114,7 @@
               Join 20,000+ modern companies using EmployeeTrack to build better cultures and streamline HR processes.
             </p>
             <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
-              <router-link to="/CreateAccount" class="bg-brand-orange text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-all shadow-lg hover:scale-105">
+              <router-link to="/register" class="bg-brand-orange text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-orange-600 transition-all shadow-lg hover:scale-105">
                 Register Now
               </router-link>
               <button class="text-white font-semibold px-8 py-4 rounded-xl border border-white/20 hover:bg-white/10 transition-colors">

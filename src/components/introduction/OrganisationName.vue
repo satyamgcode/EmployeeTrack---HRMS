@@ -9,10 +9,13 @@ const router = useRouter();
 
 // Function to handle "Next" button click and navigate to the next step
 function handleNext() {
-    localStorage.setItem('orgName', orgName.value);
     if (orgName.value) {
+        localStorage.setItem('orgName', orgName.value);
+        if (logo.value) {
+            localStorage.setItem('orgLogo', logo.value);
+        }
         console.log('Organization name:', orgName.value);
-        router.push('/step2'); // Navigate to the next step route
+        router.push('/onboarding/profile-setup'); // Navigate to the next step route
     }
 }
 
@@ -32,56 +35,52 @@ function handleLogoUpload(event) {
 <template>
     <IntroductionLayout>
         <template #StepProgress>
-            <div class="flex items-center min-h-screen mx-auto bg-white">
+            <div class="w-full">
+                <p class="text-brand-purple font-bold tracking-widest uppercase text-xs mb-4">Step 1 of 5</p>
+                <h1 class="text-4xl lg:text-5xl font-black text-gray-900 mb-6">What's your organization's name?</h1>
+                <p class="text-lg text-gray-600 mb-10 leading-relaxed">
+                    Adding your organization's name helps your team members identify it easily.
+                </p>
 
-                <div class="w-full max-w-3xl mx-auto bg-white p-8 rounded-lg">
-                    <div class=" mt-3">
-                        <p class="text-gray-500 mb-2">Step 1 of 5</p>
-                        <h1 class="text-3xl font-semibold mb-6 mt-11">What's your organization's name?</h1>
-                        <p class="text-gray-600 mb-8">
-                            Adding your organization's name helps your team members identify it easily.
-                        </p>
+                <!-- Input for organization name -->
+                <div class="mb-10">
+                    <input 
+                        v-model="orgName" 
+                        type="text" 
+                        placeholder="Enter your organization's name"
+                        class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-purple/20 focus:border-brand-purple transition-all text-lg" 
+                    />
+                </div>
 
-                        <!-- Input for organization name (no word limit) -->
-                        <div class="relative mb-6">
-                            <input v-model="orgName" type="text" placeholder="Enter your organization's name"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-purple-400" />
-                        </div>
-
-                        <!-- Optional: Information about organization logo -->
-                        <p class="text-gray-600 mb-6">You can also upload your organization's logo (optional).</p>
-
-                        <!-- Updated logo section -->
-                        <div class="flex flex-col items-center mb-6">
-                            <div class="w-24 h-24 bg-purple-200 rounded-full flex items-center justify-center mb-4">
-                                <!-- Preview uploaded logo -->
-                                <img v-if="logo" :src="logo" alt="Uploaded logo"
-                                    class="w-full h-full object-cover rounded-full" />
-                                <!-- Placeholder image for logo if not uploaded -->
-                                <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-purple-500"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <!-- Logo section -->
+                <div class="mb-12 p-8 bg-gray-50 rounded-3xl border border-dashed border-gray-300">
+                    <p class="text-gray-700 font-bold mb-6 text-center">Organization Logo (Optional)</p>
+                    <div class="flex flex-col items-center">
+                        <div class="w-32 h-32 bg-white rounded-[32px] shadow-lg flex items-center justify-center mb-6 relative overflow-hidden group">
+                            <!-- Preview uploaded logo -->
+                            <img v-if="logo" :src="logo" alt="Uploaded logo" class="w-full h-full object-cover" />
+                            <!-- Placeholder icon -->
+                            <div v-else class="text-brand-purple">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                                 </svg>
                             </div>
-
-                            <!-- Hidden File input for logo upload -->
-                            <input id="logo-upload" type="file" @change="handleLogoUpload" accept="image/*"
-                                class="hidden" />
-
-                            <!-- Upload Logo button to trigger file input -->
-                            <label for="logo-upload"
-                                class="cursor-pointer px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors">
-                                Upload Logo
-                            </label>
                         </div>
 
-                        <!-- Next button -->
-                        <button @click="handleNext"
-                            class="w-full py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors">
-                            Next
-                        </button>
+                        <input id="logo-upload" type="file" @change="handleLogoUpload" accept="image/*" class="hidden" />
+                        <label for="logo-upload" class="cursor-pointer px-8 py-3 bg-white border border-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-50 transition-all shadow-sm">
+                            Choose Image
+                        </label>
                     </div>
                 </div>
+
+                <!-- Next button -->
+                <button 
+                    @click="handleNext"
+                    class="w-full py-5 bg-brand-purple text-white font-black rounded-2xl hover:bg-brand-purple/90 transition-all shadow-xl shadow-brand-purple/20 active:scale-[0.98] text-lg"
+                >
+                    Continue
+                </button>
             </div>
         </template>
     </IntroductionLayout>

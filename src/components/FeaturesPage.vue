@@ -13,7 +13,7 @@
           From recruitment to retirement, EmployeeTrack provides the tools to build a world-class culture and streamlined operations.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <router-link to="/CreateAccount" class="bg-brand-purple text-white px-10 py-4 rounded-full font-bold shadow-2xl hover:-translate-y-1 transition-all">
+          <router-link to="/register" class="bg-brand-purple text-white px-10 py-4 rounded-full font-bold shadow-2xl hover:-translate-y-1 transition-all">
             Start Free Trial
           </router-link>
           <a href="#all-features" class="bg-white text-gray-900 border border-gray-200 px-10 py-4 rounded-full font-bold hover:bg-gray-50 transition-all">

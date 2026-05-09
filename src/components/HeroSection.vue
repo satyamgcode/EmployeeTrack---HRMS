@@ -30,7 +30,7 @@
 
         <div class="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up delay-300">
           <router-link 
-            to="/CreateAccount" 
+            to="/register" 
             class="group bg-brand-purple text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand-purple/90 transition-all flex items-center gap-3 shadow-2xl shadow-brand-purple/30 hover:-translate-y-1"
           >
             Get Started Free
